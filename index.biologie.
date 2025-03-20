@@ -1,0 +1,101 @@
+import random
+
+# Întrebările și variantele de răspuns
+intrebari = [
+    {
+        "intrebare": "Ce glandă este considerată 'glanda mamă' a sistemului endocrin?",
+        "variante": ["A) Glanda tiroidă", "B) Glanda pituitară", "C) Glanda suprarenală", "D) Pancreasul"],
+        "corect": "B"
+    },
+    {
+        "intrebare": "Ce hormon este produs de glanda tiroidă?",
+        "variante": ["A) Insulina", "B) Cortizol", "C) Tiroxina", "D) Adrenalina"],
+        "corect": "C"
+    },
+    {
+        "intrebare": "Care este rolul insulinei în organism?",
+        "variante": ["A) Crește nivelul de glucoză din sânge", "B) Reduce nivelul de glucoză din sânge", "C) Reglează metabolismul lipidelor", "D) Controlează temperatura corpului"],
+        "corect": "B"
+    },
+    {
+        "intrebare": "Ce hormon este secretat de glandele suprarenale în situații de stres?",
+        "variante": ["A) Insulina", "B) Adrenalina", "C) Melatonina", "D) Glucagonul"],
+        "corect": "B"
+    },
+    {
+        "intrebare": "Ce hormon ajută la reglarea ciclului somn-veghe?",
+        "variante": ["A) Adrenalina", "B) Melatonina", "C) Cortizolul", "D) Estrogenul"],
+        "corect": "B"
+    },
+    {
+        "intrebare": "Unde este localizată glanda tiroidă?",
+        "variante": ["A) În creier", "B) În zona gâtului", "C) În zona stomacului", "D) În zona rinichilor"],
+        "corect": "B"
+    },
+    {
+        "intrebare": "Care dintre următorii hormoni este responsabil pentru creștere?",
+        "variante": ["A) Insulina", "B) Hormonul de creștere", "C) Tiroxina", "D) Oxitocina"],
+        "corect": "B"
+    },
+    {
+        "intrebare": "Ce hormon este esențial în răspunsul 'luptă sau fugi'?",
+        "variante": ["A) Serotonina", "B) Adrenalina", "C) Testosteronul", "D) Insulina"],
+        "corect": "B"
+    },
+    {
+        "intrebare": "Ce glandă produce cortizol?",
+        "variante": ["A) Hipofiza", "B) Suprarenalele", "C) Tiroida", "D) Pancreasul"],
+        "corect": "B"
+    },
+    {
+        "intrebare": "Ce hormon este asociat cu reglarea nivelului de calciu din sânge?",
+        "variante": ["A) Parathormonul", "B) Insulina", "C) Cortizolul", "D) Glucagonul"],
+        "corect": "A"
+    },
+    {
+        "intrebare": "Care glandă secretă estrogen și progesteron?",
+        "variante": ["A) Testiculele", "B) Ovarele", "C) Pancreasul", "D) Tiroida"],
+        "corect": "B"
+    },
+    {
+        "intrebare": "Ce hormon este responsabil pentru senzația de foame?",
+        "variante": ["A) Leptina", "B) Ghrelina", "C) Insulina", "D) Glucagonul"],
+        "corect": "B"
+    },
+    {
+        "intrebare": "Ce glandă produce hormonul antidiuretic (ADH)?",
+        "variante": ["A) Hipotalamusul", "B) Tiroida", "C) Suprarenalele", "D) Pancreasul"],
+        "corect": "A"
+    },
+    {
+        "intrebare": "Ce hormon stimulează contracțiile în timpul nașterii?",
+        "variante": ["A) Oxitocina", "B) Progesteronul", "C) Adrenalina", "D) Cortizolul"],
+        "corect": "A"
+    },
+    {
+        "intrebare": "Ce hormon ajută la reglarea nivelului de glucoză atunci când este scăzut?",
+        "variante": ["A) Insulina", "B) Glucagonul", "C) Tiroxina", "D) Cortizolul"],
+        "corect": "B"
+    }
+]
+
+# Amestecă întrebările
+random.shuffle(intrebari)
+
+scor = 0
+
+print("\nBine ai venit la quiz-ul despre Sistemul Endocrin!\n")
+for i, q in enumerate(intrebari, start=1):
+    print(f"\nÎntrebarea {i}: {q['intrebare']}")
+    for optiune in q["variante"]:
+        print(optiune)
+
+    raspuns = input("Alege răspunsul corect (A, B, C sau D): ").strip().upper()
+    
+    if raspuns == q["corect"]:
+        print("✔ Răspuns corect!")
+        scor += 1
+    else:
+        print(f"✖ Răspuns greșit! Răspunsul corect era {q['corect']}.")
+
+print(f"\nQuiz terminat! Scorul tău final: {scor}/15")
